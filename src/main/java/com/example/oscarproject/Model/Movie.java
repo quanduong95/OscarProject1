@@ -18,6 +18,9 @@ public class Movie {
     @Column(name = "category")
     private String category;
 
+    @Column(name = "cast")
+    private String cast;
+
     // the year when the movie was released.
     @Column(name = "year")
     private String year;
