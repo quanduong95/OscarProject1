@@ -6,19 +6,20 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name="movies")
-public class Movie {
+@Table(name="actors")
+public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="movieName",nullable = false)
+    @Column(name="actor_name",nullable = false)
+    private String actressName;
+
+    //name of the movie that the actor starred in
+    @Column(name = "movie_name")
     private String movieName;
 
-    @Column(name = "category")
-    private String category;
-
-    // the year when the movie was released
+    //year of the movie/ the year that actor was nominated/won the Oscar award
     @Column(name = "year")
     private String year;
 
