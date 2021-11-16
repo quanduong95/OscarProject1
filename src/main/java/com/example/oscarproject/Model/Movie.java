@@ -18,7 +18,7 @@ public class Movie {
     @Column(name = "category")
     private String category;
 
-    // the year when the movie was released
+    // the year when the movie was released.
     @Column(name = "year")
     private String year;
 
