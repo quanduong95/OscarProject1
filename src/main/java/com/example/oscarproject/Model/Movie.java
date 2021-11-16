@@ -22,7 +22,7 @@ public class Movie {
     @Column(name = "year")
     private String year;
 
-    //nominated or won any award
+    //nominated or won any award.
     @Column(name = "award")
     private String award;
 
