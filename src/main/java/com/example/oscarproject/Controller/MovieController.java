@@ -25,7 +25,7 @@ public class MovieController {
         return new ResponseEntity<Movie>(movieService.saveMovie(movie), HttpStatus.CREATED);
     }
 
-    //get all movies REST API
+    //get all movies REST AP
     @GetMapping()
     public List<Movie> getAllMovies(){
         return movieService.getAllMovies();
