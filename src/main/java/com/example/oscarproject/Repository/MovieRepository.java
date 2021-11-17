@@ -1,3 +1,6 @@
+/**
+ * This interface 's purpose is to allow access with multiple methods within CrudRepository framework
+ */
 package com.example.oscarproject.Repository;
 
 import com.example.oscarproject.Model.Movie;

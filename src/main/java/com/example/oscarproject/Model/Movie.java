@@ -1,3 +1,8 @@
+/**
+ * Entity class
+ * To define our entity (Movie) with its properties.
+ * Also to specify columns in our database's table
+ */
 package com.example.oscarproject.Model;
 
 import lombok.Data;

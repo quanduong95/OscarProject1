@@ -1,3 +1,6 @@
+/**
+ * This interface class is to store methods needed for the MovieServiceImplementation class
+ */
 package com.example.oscarproject.Service;
 
 import com.example.oscarproject.Model.Movie;

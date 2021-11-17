@@ -1,3 +1,7 @@
+/**
+ * Controller class to specify API endpoints
+ */
+
 package com.example.oscarproject.Controller;
 
 import com.example.oscarproject.Model.Movie;
