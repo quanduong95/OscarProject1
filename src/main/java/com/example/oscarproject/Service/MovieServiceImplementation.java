@@ -23,11 +23,24 @@ public class MovieServiceImplementation implements MovieService {
 
     @Override
     public List<Movie> getAllMovies() {
-        return movieRepository.findAll();
+        return (List<Movie>) movieRepository.findAll();
     }
 
     @Override
     public Optional<Movie> getMovieById(Long id) {
-        return getMovieById(id);
+        return movieRepository.findById(id);
     }
+    public List<Movie> getMovieByAward(String award){
+        return movieRepository.findAllByAward(award);
+    }
+    @Override
+    public List<Movie> getMovieByCategory(String category) {
+        return movieRepository.findAllByCategory(category);
+    }
+
+    @Override
+    public List<Movie> getMovieByCategoryAndYear(String category, String year) {
+        return movieRepository.findAllByCategoryAndYear(category,year);
+    }
+
 }
