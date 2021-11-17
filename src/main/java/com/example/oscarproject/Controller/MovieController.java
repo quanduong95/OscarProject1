@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/movies")
@@ -22,7 +21,7 @@ public class MovieController {
     //create a movie REST API
     @PostMapping()
     public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie){
-        return new ResponseEntity<Movie>(movieService.saveMovie(movie), HttpStatus.CREATED);
+        return new ResponseEntity<>(movieService.saveMovie(movie), HttpStatus.CREATED);
     }
 
     //get all movies
@@ -34,14 +33,22 @@ public class MovieController {
     //get all movies by their category
     @RequestMapping(value = "/category/{category}")
     public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category){
+        category = category.replaceAll("\\s","");
         return movieService.getMovieByCategory(category);
     }
 
-    //get all movies by their catergory and year
+    //get all movies by their category and year
     @RequestMapping(value = "/category/{category}/year/{year}")
-    public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category, @PathVariable(value ="year") String year){
+    public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category,
+                                           @PathVariable(value ="year") String year){
         return movieService.getMovieByCategoryAndYear(category,year);
     }
 
+    //get all movies won the Oscar award by category in a specific year
+    @RequestMapping(value = "/category/{category}/entity/{winner}/year/{year}")
+    public List<Movie> findMovieByCategoryAndWinner(@PathVariable(value ="category") String category,
+                                                    @PathVariable(value ="winner") String winner,@PathVariable(value="year") String year){
+        return movieService.getMovieByCategoryAndWinnerAndYear(category,winner,year);
+    }
 
 }

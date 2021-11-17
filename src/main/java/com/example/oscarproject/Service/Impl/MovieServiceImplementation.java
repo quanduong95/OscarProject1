@@ -28,11 +28,6 @@ public class MovieServiceImplementation implements MovieService {
     }
 
     @Override
-    public Optional<Movie> getMovieById(Long id) {
-        return movieRepository.findById(id);
-    }
-
-    @Override
     public List<Movie> getMovieByCategory(String category) {
         return movieRepository.findAllByCategory(category);
     }
@@ -40,6 +35,11 @@ public class MovieServiceImplementation implements MovieService {
     @Override
     public List<Movie> getMovieByCategoryAndYear(String category, String year) {
         return movieRepository.findAllByCategoryAndYear(category,year);
+    }
+
+    @Override
+    public List<Movie> getMovieByCategoryAndWinnerAndYear(String category, String winner,String year) {
+        return movieRepository.findAllByCategoryAndWinnerAndYear(category,winner,year);
     }
 
 }
