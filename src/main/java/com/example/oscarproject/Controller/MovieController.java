@@ -31,18 +31,6 @@ public class MovieController {
         return movieService.getAllMovies();
     }
 
-    //get all movies by their award(WINNER OR NOMINEES)
-    @RequestMapping("/award/{award}")
-    public List<Movie> findMovieByAward(@PathVariable(value ="award") String award){
-        return movieService.getMovieByAward(award);
-    }
-
-    //get all movies by their award and year (WINNER OR NOMINEES)
-    @RequestMapping("/award/{award}/year/{year}")
-    public List<Movie> findMovieByAward(@PathVariable(value ="award") String award,@PathVariable(value ="year") String year){
-        return movieService.getMovieByAwardAndYear(award,year);
-    }
-
     //get all movies by their category
     @RequestMapping(value = "/category/{category}")
     public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category){

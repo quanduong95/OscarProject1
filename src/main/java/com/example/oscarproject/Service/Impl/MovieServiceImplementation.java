@@ -33,14 +33,6 @@ public class MovieServiceImplementation implements MovieService {
     }
 
     @Override
-    public List<Movie> getMovieByAward(String award) {
-        return movieRepository.findAllByAward(award);
-    }
-
-    public List<Movie> getMovieByAwardAndYear(String award,String year){
-        return movieRepository.findAllByAwardAndYear(award,year);
-    }
-    @Override
     public List<Movie> getMovieByCategory(String category) {
         return movieRepository.findAllByCategory(category);
     }

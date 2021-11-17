@@ -12,21 +12,17 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name="movieName",nullable = false)
-    private String movieName;
+    @Column(name="year",nullable = false)
+    private String year;
 
     @Column(name = "category")
     private String category;
 
-    @Column(name = "cast")
-    private String cast;
+    @Column(name = "winner")
+    private String winner;
 
-    // the year when the movie was released.
-    @Column(name = "year")
-    private String year;
 
-    //nominated or won any award.
-    @Column(name = "award")
-    private String award;
+    @Column(name = "entity")
+    private String entity;
 
 }

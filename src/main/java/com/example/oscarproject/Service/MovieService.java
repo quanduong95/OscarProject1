@@ -9,8 +9,6 @@ public interface MovieService {
     Movie saveMovie (Movie movie);
     List<Movie> getAllMovies();
     Optional<Movie> getMovieById(Long id);
-    List<Movie> getMovieByAward(String award);
     List<Movie> getMovieByCategory(String category);
     List<Movie> getMovieByCategoryAndYear(String category, String year);
-    List<Movie> getMovieByAwardAndYear(String award, String year);
 }
