@@ -24,20 +24,19 @@ public class MovieController {
         return new ResponseEntity<>(movieService.saveMovie(movie), HttpStatus.CREATED);
     }
 
-    //get all movies
+    //get all movies stored in the database
     @GetMapping()
     public List<Movie> getAllMovies(){
         return movieService.getAllMovies();
     }
 
-    //get all movies by their category
-    @RequestMapping(value = "/category/{category}")
-    public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category){
-        category = category.replaceAll("\\s","");
-        return movieService.getMovieByCategory(category);
+    //get all movies nominated by year
+    @RequestMapping(value = "/year/{year}")
+    public List<Movie> findMovieByYear(@PathVariable(value ="year") String year){
+        return movieService.getMovieByYear(year);
     }
 
-    //get all movies by their category and year
+    //get all movies nominated by their category and year
     @RequestMapping(value = "/category/{category}/year/{year}")
     public List<Movie> findMovieByCategory(@PathVariable(value ="category") String category,
                                            @PathVariable(value ="year") String year){

@@ -11,4 +11,5 @@ public interface MovieService {
     List<Movie> getMovieByCategory(String category);
     List<Movie> getMovieByCategoryAndYear(String category, String year);
     List<Movie> getMovieByCategoryAndWinnerAndYear(String category, String winner,String year);
+    List<Movie> getMovieByYear(String year);
 }

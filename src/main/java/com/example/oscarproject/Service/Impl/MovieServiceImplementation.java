@@ -42,4 +42,9 @@ public class MovieServiceImplementation implements MovieService {
         return movieRepository.findAllByCategoryAndWinnerAndYear(category,winner,year);
     }
 
+    @Override
+    public List<Movie> getMovieByYear(String year) {
+        return movieRepository.findAllByYear(year);
+    }
+
 }
