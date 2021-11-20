@@ -4,13 +4,13 @@
  */
 package com.example.oscarproject.Service.Impl;
 
-import com.example.oscarproject.Model.Movie;
 import com.example.oscarproject.Repository.MovieRepository;
 import com.example.oscarproject.Service.MovieService;
+import com.example.oscarproject.Model.Movie;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.Locale;
 
 @Service
 public class MovieServiceImplementation implements MovieService {
@@ -29,32 +29,33 @@ public class MovieServiceImplementation implements MovieService {
 
     //get all movies method
     @Override
-    public List<Movie> getAllMovies() {
+    public List<Movie> getMovies() {
         return (List<Movie>) movieRepository.findAll();
-    }
-
-    //get all movies with category
-    @Override
-    public List<Movie> getMovieByCategory(String category) {
-        return movieRepository.findAllByCategory(category);
     }
 
     //get all movies with particular category and year
     @Override
     public List<Movie> getMovieByCategoryAndYear(String category, String year) {
-        return movieRepository.findAllByCategoryAndYear(category,year);
+        return (List<Movie>) movieRepository.findAllByCategoryAndYear(category,year);
     }
 
     //get all movies won the Oscar in particular year
     @Override
     public List<Movie> getMovieByCategoryAndWinnerAndYear(String category, String winner,String year) {
-        return movieRepository.findAllByCategoryAndWinnerAndYear(category,winner,year);
+        return (List<Movie>) movieRepository.findAllByCategoryAndWinnerAndYear(category,winner,year);
     }
 
     // get all movies nominated for the Oscar by year
     @Override
     public List<Movie> getMovieByYear(String year) {
-        return movieRepository.findAllByYear(year);
+        return (List<Movie>) movieRepository.findAllByYear(year);
     }
+
+    //get all movies that won the Oscar by year
+    @Override
+    public List<Movie> getMovieByWinnerAndYear(String winner, String year) {
+        return (List<Movie>) movieRepository.findAllByWinnerAndYear(winner,year);
+    }
+
 
 }
