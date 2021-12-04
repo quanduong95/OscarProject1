@@ -30,4 +30,5 @@ public class Movie {
     @Column(name = "entity")
     private String entity;
 
+
 }

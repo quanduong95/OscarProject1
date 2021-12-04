@@ -44,6 +44,10 @@ public class MovieServiceImplementation implements MovieService {
     public List<Movie> getMovieByCategoryAndWinnerAndYear(String category, String winner,String year) {
         return (List<Movie>) movieRepository.findAllByCategoryAndWinnerAndYear(category,winner,year);
     }
+    //get all Movies nominated from a year to present
+    public List<Movie> getMovieByYearGreaterThanEqual(String year) {
+        return (List<Movie>) movieRepository.findAllByYearGreaterThanEqual(year);
+    }
 
     // get all movies nominated for the Oscar by year
     @Override

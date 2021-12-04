@@ -17,6 +17,7 @@ import java.util.List;
 public class MovieController {
     private final MovieService movieService;
 
+
     public MovieController(MovieService movieService) {
         super();
         this.movieService = movieService;
@@ -45,6 +46,12 @@ public class MovieController {
     public List<Movie> findMovieByWinnerAndYear(@PathVariable(value ="winner") String winner,
                                                 @PathVariable(value ="year") String year){
         return movieService.getMovieByWinnerAndYear(winner,year);
+    }
+
+    //get all the movies nominated  from a year to present
+    @RequestMapping(value = "/toPresent/year/{year}")
+    public List<Movie> findMovieByYearGreaterThanEqual(@PathVariable(value ="year") String year){
+        return movieService.getMovieByYearGreaterThanEqual(year);
     }
 
     //get all movies nominated by their category and year
