@@ -17,7 +17,6 @@ import java.util.List;
 public class MovieController {
     private final MovieService movieService;
 
-
     public MovieController(MovieService movieService) {
         super();
         this.movieService = movieService;
